@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Dersleri</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style type="text/css">
+        body{
+            font-family: 'Roboto Mono', monospace;
+        }
+        .card-columns .card {
+            width: auto !important;
+        }
+        .cevrele{
+            /*border: 1px solid #333;*/
+            width: 100%;
+            padding: 15px;
+            margin: 5px;
+            float: left;
+        }
+        code{
+            font-size: 1.2em;
+            padding: 15px;
+            line-height: 1.5rem;
+            color:#252525;
+            display: block;
+            background-color: #838f9c78;
+        }
+        table {
+            margin-right: auto;
+            margin-left: auto;
+        }
+    </style>
+
+    <script type="text/javascript">
+        function degistir() {
+            document.getElementById('baslik').innerHTML = "Başlık Değişti!";
+        }
+        function gerial() {
+            document.getElementById('baslik').innerHTML = "JavaScript Dersleri";
+        }
+    </script>
+    <script src="js/myScript.js"></script>
+    <script src="prism/prism.js"></script>
+    <link rel="stylesheet" type="text/css" href="prism/prism.css">
+</head>
+<body>
+    <h1 id="baslik"></h1>
+    <button onclick="degistir()">Başlığı Değiştir</button>
+    <button onclick="gerial()">Geri Al</button>
+    <button onclick="dosyadan()">Dosyadan Çağır</button>
+    <hr>
+
+    <table>
+        <tr>
+            <td><div class="cevrele">
+                <h3>İçerik Yazı değiştirme</h3>
+                <hr>
+                <i>"İçeridekiler tek tırnak !! onclick parametresine;"</i><br><br>
+               <pre>
+                    <code class="language-js">"document.getElementById('demo').innerHTML='Yerine geçecek içerik'"</code>
+                </pre>
+                <p id="demo">Burası değişecek kısım.</p>
+                <button onclick="document.getElementById('demo').innerHTML ='Bak değişti!!'">Değiştir</button>
+            </div></td>
+            <td><div class="cevrele">
+                <h3>İçerik Resim Değiştirme SRC</h3>
+                <hr>
+                <i>"İçeridekiler tek tırnak !!"</i><br><br>
+                <pre>
+                    <code class="language-js">onclick parametresine;
+                        "document.getElementById('resim').src='images/ask.png'"
+                    </code>
+                </pre>
+                <button onclick="document.getElementById('resim').src='images/ask.png'">öpme</button>
+                <img src="images/ask.png" id="resim" alt="Sakallı">
+                <button onclick="document.getElementById('resim').src='images/kiss.png'">öp</button>
+            </div></td>
+
+        </tr>
+        <tr>
+            <td><div class="cevrele">
+                <h3>Yazı Fontunu Büyütme</h3>
+                <hr>
+                <i>"İçeridekiler tek tırnak !!"</i><br><br>
+                <pre>
+                    <code class="language-js">onclick parametresine;
+                        "document.getElementById('font').style.fontSize ='35px'"
+                    </code>
+                </pre>
+                <p id="font">Font Büyütme</p>
+                <button onclick="document.getElementById('font').style.fontSize ='32px'">Büyüt</button>
+                <button onclick="document.getElementById('font').style.fontSize ='16px'">Küçült</button>
+            </div></td>
+            <td><div class="cevrele">
+                <h3>İçerik Gizleme </h3>
+                <hr>
+                <i>Css Display none yaparak gizleniyor.</i><br><br>
+                <pre>
+                    <code class="language-js">onclick parametresine;
+                        "document.getElementById('gizle').style.display ='none'"
+                    </code>
+                </pre>
+                <img src="images/man.png" id="gizle" alt="">
+                <button onclick="document.getElementById('gizle').style.display ='none'">Gizle</button>
+                <button onclick="document.getElementById('gizle').style.display ='block'">Göster</button>
+            </div></td>
+
+        </tr>
+        <tr>
+            <td><div class="cevrele">
+                <h3>Document Write Fonksiyonu</h3>
+                <hr>
+                <i><>script tagleri arasına;</i><br><br>
+                <pre>
+                    <code class="language-js">"document.write(5 + 6)"</code>
+                </pre>
+                <script type="text/javascript">
+                    document.write(5 + 6);
+                </script>
+            </div></td>
+            <td>
+                <div class="cevrele">
+                    <h3>Uyarı ( Window Alert )</h3>
+                    <hr>
+                    <i><>script tagleri arasına;</i><br><br>
+                    <pre>
+                        <code class="language-js">"window.alert("Uyarı Mesajı buraya gelecek.")"</code>
+                    </pre>
+                    <script type="text/javascript">
+                        window.alert("Bu bir uyarıdır!")
+                    </script>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="cevrele">
+                    <h3>Konsol Bilgisi Ekleme</h3>
+                    <hr>
+                    <i>İncele kısmında Console menüsünde bilgi vermek için </i><br><br>
+                    <pre>
+                        <code class="language-js">console.log("Bu bir konsol logudur!")</code>
+                    </pre>
+                    <script>
+                        console.log("Bunu okuyan varya adamdır adam!");
+                    </script>
+                </div>
+            </td>
+            <td>
+                <div class="cevrele">
+                    <h3>Değişken Tanımlama</h3>
+                    <hr>
+                    <i>Değişken tanımlamak için var ifadesi kullanılır.</i><br><br>
+                    <pre>
+                        <code class="language-js">var a, b, c;<br>a = 5;<br>b = 6;<br>c = a + b;<br>
+                            document.getElementById("toplam").innerHTML = c;
+                        </code>
+                    </pre>
+                    <p id="islem"></p>
+                    <script>
+                        var a, b, c;
+                        a = 5;
+                        b = 4;
+                        c = a + b;
+                        document.getElementById("islem").innerHTML = c;
+                    </script>
+
+                </div>
+            </td>
+
+        </tr>
+    </table>
+
+
+    <script>
+        document.getElementById("baslik").innerHTML = "JavaScript Dersleri";
+    </script>
+
+</body>
+</html>
